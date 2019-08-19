@@ -1,0 +1,44 @@
+spring:
+  banner:
+    charset: UTF-8
+    location: classpath:banner.txt
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/conpany_website?allowMultiQueries=true
+      username: root
+      password: xy942698.
+      initial-size: 5
+      max-active: 10
+      min-idle: 5
+      max-wait: 3600
+  devtools:
+    restart:
+      exclude: classpath:Static/*
+      enabled: true
+      log-condition-evaluation-delta: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  thymeleaf:
+    encoding: UTF-8
+    cache: false
+    servlet:
+      content-type: text/html
+    mode: HTML5
+    prefix: classpath:/Static/
+mybatis:
+  mapper-locations: classpath:Mapper/*.xml
+application:
+  version: 0.0.1
+shiro:
+  enabled: true
+  web:
+    enabled: true
+  sessionManager:
+    sessionIdCookieEnabled: true
+    sessionIdUrlRewritingEnabled: true
+  loginUrl: /login
+  successUrl: /management
+  unauthorizedUrl: /login
